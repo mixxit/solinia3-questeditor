@@ -151,7 +151,7 @@ namespace SoliniaQuestEditor
             {
                 // trigger data doesnt exist, create it
                 NPCEvent npcEvent = new NPCEvent();
-                npcEvent.interactiontype = "CHAT";
+                npcEvent.interactiontype = InteractionType.CHAT;
                 npcEvent.awardsItem = 0;
                 npcEvent.awardsQuest = 0;
                 npcEvent.awardsQuestFlag = "";
@@ -233,7 +233,7 @@ namespace SoliniaQuestEditor
         {
             GetQuestPanel().Visible = false;
 
-            GetInteractionTypeTextBox().Text = questStepData.Item2.interactiontype;
+            GetInteractionTypeTextBox().Text = questStepData.Item2.interactiontype.ToString();
             GetTriggerDataTextBox().Text = questStepData.Item2.triggerdata;
             GetChatResponseTextBox().Text = questStepData.Item2.chatresponse;
             GetRequiresQuestTextBox().Text = questStepData.Item2.requiresQuest.ToString();
@@ -369,7 +369,7 @@ namespace SoliniaQuestEditor
                 npcEvent.requiresQuestFlag = GetRequiresQuestFlagTextBox().Text;
                 npcEvent.awardsRandomisedGear = Convert.ToBoolean(GetAwardsRandomisedGearTextBox().Text);
                 npcEvent.chatresponse = GetChatResponseTextBox().Text;
-                npcEvent.interactiontype = GetInteractionTypeTextBox().Text;
+                npcEvent.interactiontype = (InteractionType)Enum.Parse(typeof(InteractionType), GetInteractionTypeTextBox().Text);
                 npcEvent.npcId = Convert.ToInt32(GetNPCIDTextBox().Text);
                 npcEvent.requiresQuest = Convert.ToInt32(GetRequiresQuestTextBox().Text);
                 npcEvent.teleportResponse = GetTeleportResponseTextBox().Text;
@@ -386,7 +386,7 @@ namespace SoliniaQuestEditor
                 npcEvent.awardsQuestFlag = GetAwardsQuestFlagTextBox().Text;
                 npcEvent.awardsRandomisedGear = Convert.ToBoolean(GetAwardsRandomisedGearTextBox().Text);
                 npcEvent.chatresponse = GetChatResponseTextBox().Text;
-                npcEvent.interactiontype = GetInteractionTypeTextBox().Text;
+                npcEvent.interactiontype = (InteractionType)Enum.Parse(typeof(InteractionType),GetInteractionTypeTextBox().Text);
                 npcEvent.npcId = Convert.ToInt32(GetNPCIDTextBox().Text);
                 npcEvent.requiresQuest = Convert.ToInt32(GetRequiresQuestTextBox().Text);
                 npcEvent.requiresQuestFlag = GetRequiresQuestFlagTextBox().Text;

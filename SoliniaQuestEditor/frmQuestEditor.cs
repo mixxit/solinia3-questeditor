@@ -63,5 +63,9 @@ namespace SoliniaQuestEditor
         {
 
         }
+
+        private void frmQuestEditor_Load(object sender, EventArgs e)
+        {
+        }
     }
 }

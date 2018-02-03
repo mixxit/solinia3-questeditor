@@ -472,6 +472,7 @@
             this.Controls.Add(this.tvTree);
             this.Name = "frmQuestEditor";
             this.Text = "frmQuestEditor";
+            this.Load += new System.EventHandler(this.frmQuestEditor_Load);
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panelQuestStep.ResumeLayout(false);

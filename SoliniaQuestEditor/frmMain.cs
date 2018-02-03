@@ -192,5 +192,34 @@ namespace SoliniaQuestEditor
         {
             CreateDynamicObject<Quest>();
         }
+
+        private void createItemToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            CreateDynamicObject<Spell>();
+        }
+
+        private void searchItemsToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            SearchDynamicObject<Spell>(GetManager().Database.Spells);
+        }
+
+        public void ShowQuestDesigner()
+        {
+            if (!IsWorldLoaded())
+            {
+                MessageBox.Show("World is not loaded, please load via the file menu");
+                return;
+            }
+
+            frmQuestVisualiser form = new frmQuestVisualiser();
+            form.MdiParent = this;
+            form.SetManager(GetManager());
+            form.Show();
+        }
+
+        private void questVIsualiserToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ShowQuestDesigner();
+        }
     }
 }
